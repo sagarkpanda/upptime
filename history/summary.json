@@ -1,8 +1,8 @@
 [
   {
     "name": "sagarpanda",
-    "url": "https://www.sagarpanda.com",
-    "icon": "https://icons.duckduckgo.com/ip3/www.sagarpanda.com.ico",
+    "url": "https://sagarpanda.com",
+    "icon": "https://icons.duckduckgo.com/ip3/sagarpanda.com.ico",
     "slug": "sagarpanda",
     "status": "up",
     "uptime": "100.00%",
@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 288,
-    "timeDay": 288,
-    "timeWeek": 288,
-    "timeMonth": 288,
-    "timeYear": 288,
+    "time": 227,
+    "timeDay": 227,
+    "timeWeek": 227,
+    "timeMonth": 227,
+    "timeYear": 227,
     "dailyMinutesDown": {}
   }
 ]
