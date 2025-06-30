@@ -4,17 +4,19 @@
     "url": "https://sagarpanda.com",
     "icon": "https://icons.duckduckgo.com/ip3/sagarpanda.com.ico",
     "slug": "sagarpanda",
-    "status": "down",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.38%",
+    "uptimeWeek": "99.91%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "100.00%",
     "time": 225,
-    "timeDay": 222,
-    "timeWeek": 197,
+    "timeDay": 212,
+    "timeWeek": 198,
     "timeMonth": 209,
     "timeYear": 225,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2025-06-30": 9
+    }
   }
 ]
