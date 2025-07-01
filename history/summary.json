@@ -6,17 +6,15 @@
     "slug": "sagarpanda",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.38%",
-    "uptimeWeek": "99.91%",
-    "uptimeMonth": "99.98%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 225,
-    "timeDay": 212,
-    "timeWeek": 198,
-    "timeMonth": 209,
+    "timeDay": 213,
+    "timeWeek": 207,
+    "timeMonth": 213,
     "timeYear": 225,
-    "dailyMinutesDown": {
-      "2025-06-30": 9
-    }
+    "dailyMinutesDown": {}
   }
 ]
