@@ -4,7 +4,7 @@
     "url": "https://sagarpanda.com",
     "icon": "https://icons.duckduckgo.com/ip3/sagarpanda.com.ico",
     "slug": "sagarpanda",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -16,6 +16,7 @@
     "timeMonth": 257,
     "timeYear": 228,
     "dailyMinutesDown": {
+      "2025-08-15": 0,
       "2025-08-05": 25,
       "2025-07-04": 32
     }
