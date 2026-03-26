@@ -20,7 +20,7 @@ With [Upptime](https://upptime.js.org), you can get your own unlimited and free 
 
 <!--end: status pages-->
 
-[**Visit our status website →**](https://sagarpanda.com)
+[**Visit our status website →**](https://status.sagarpanda.com)
 
 ## 📄 License
 
