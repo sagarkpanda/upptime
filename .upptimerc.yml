@@ -12,10 +12,15 @@ status-website:
   cname: status.sagarpanda.com
   #baseUrl: /upptime
   logoUrl: https://raw.githubusercontent.com/sagarkpanda/sagarkpanda.github.io/refs/heads/main/static/images/circle_profile.webp
+  css: |
+     img.logo {
+       height: 40px !important;
+       width: auto !important;
+     }
   name: Sagar Panda Status
   introTitle: "Is **sagarpanda.com** down?"
   IntroMessage: This is a status page of Sagar Panda hosted on GitHub Pages
-  theme: night
+  #theme: night
   navbar:
     #- title: Status
      # href: /
