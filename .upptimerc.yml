@@ -24,6 +24,12 @@ status-website:
       href: https://sagarpanda.com/
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
+i18n:
+  locale: en-GB
+  day: "DD"
+  month: "Mon"
+  year: "YYYY"
+  dateFormat: "DD MMM YYYY"
 
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
