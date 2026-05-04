@@ -17,6 +17,44 @@ status-website:
   #introTitle: "Is **sagarpanda.com** down?"
   introMessage: This is a status page of Sagar Panda hosted on GitHub Pages
   #theme: night
+
+  customFootHtml: |
+    <script>
+      (function() {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        function formatDates() {
+          const headings = document.querySelectorAll('h3');
+          headings.forEach(h => {
+            const match = h.innerText.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (match) {
+              const day = match[1];
+              const monthIndex = parseInt(match[2]) - 1;
+              const year = match[3];
+              if (months[monthIndex]) {
+                h.innerText = day + " " + months[monthIndex] + " " + year;
+              }
+            }
+          });
+        }
+        formatDates();
+        const observer = new MutationObserver(formatDates);
+        observer.observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
+    
+  navbar:
+    - title: Status
+      href: /
+    - title: Home
+      href: https://sagarpanda.com/
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+  css: |
+    img.logo {
+      height: 35px !important;
+      width: auto !important;
+    }
+  
   navbar:
     #- title: Status
      # href: /
@@ -24,6 +62,13 @@ status-website:
       href: https://sagarpanda.com/
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
+
+i18n:
+  locale: en-GB
+  day: "DD"
+  month: "Mon"
+  year: "YYYY"
+  dateFormat: "DD MMM YYYY"
  
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
