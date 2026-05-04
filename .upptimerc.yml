@@ -41,19 +41,6 @@ status-website:
         observer.observe(document.body, { childList: true, subtree: true });
       })();
     </script>
-    
-  navbar:
-    - title: Status
-      href: /
-    - title: Home
-      href: https://sagarpanda.com/
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-  css: |
-    img.logo {
-      height: 35px !important;
-      width: auto !important;
-    }
   
   navbar:
     #- title: Status
