@@ -23,23 +23,27 @@ status-website:
       (function() {
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         function formatDates() {
-          // Look in all headings and spans where Upptime stores dates
-          const elements = document.querySelectorAll('h3, span, small');
-          elements.forEach(el => {
-            // Updated regex to find the date even if there is whitespace or it's part of a larger string
-            const match = el.innerText.trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+          // Target h3 specifically as seen in your inspect tool
+          const headings = document.querySelectorAll('h3');
+          headings.forEach(h => {
+            const text = h.innerText.trim();
+            // Match DD/MM/YYYY
+            const match = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
             if (match) {
-              const day = match[1];
+              const day = parseInt(match[1]);
               const monthIndex = parseInt(match[2]) - 1;
               const year = match[3];
               if (months[monthIndex]) {
-                el.innerText = day + " " + months[monthIndex] + " " + year;
+                h.innerText = day + " " + months[monthIndex] + " " + year;
               }
             }
           });
         }
         formatDates();
-        const observer = new MutationObserver(formatDates);
+        setTimeout(formatDates, 1000);
+        setTimeout(formatDates, 3000);
+
+        const observer = new MutationObserver(() => formatDates());
         observer.observe(document.body, { childList: true, subtree: true });
       })();
     </script>
@@ -57,7 +61,7 @@ i18n:
   day: "DD"
   month: "Mon"
   year: "YYYY"
-  dateFormat: "DD MMM YYYY"
+  dateFormat: "DD/MM/YYYY"
 
 notifications:
   - type: telegram
