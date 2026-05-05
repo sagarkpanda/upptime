@@ -18,47 +18,6 @@ status-website:
   introMessage: This is a status page of Sagar Panda hosted on GitHub Pages
   #theme: night
 
-  customFootHtml: |
-    <script>
-      (function() {
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        function formatDates() {
-          const headings = document.querySelectorAll('h3');
-          headings.forEach(h => {
-            const text = h.textContent.trim();
-            // This regex now looks for the "DD/MM/YYYY" pattern specifically
-            const match = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-            if (match) {
-              const day = match[1];
-              const monthIndex = parseInt(match[2]) - 1;
-              const year = match[3];
-              if (months[monthIndex]) {
-                const newDate = day + " " + months[monthIndex] + " " + year;
-                // Only update if it's different to prevent infinite loops with the observer
-                if (h.textContent !== newDate) {
-                  h.textContent = newDate;
-                }
-              }
-            }
-          });
-        }
-
-        // Run immediately
-        formatDates();
-
-        // High-frequency check for the first 5 seconds to catch slow loading components
-        let checks = 0;
-        const interval = setInterval(() => {
-          formatDates();
-          if (checks++ > 20) clearInterval(interval);
-        }, 250);
-
-        // Continuous observer for user navigation/scrolling
-        const observer = new MutationObserver(() => formatDates());
-        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-      })();
-    </script>
-
   navbar:
     #- title: Status
      # href: /
@@ -69,10 +28,6 @@ status-website:
 
 i18n:
   locale: en-GB
-  day: "DD"
-  month: "Mon"
-  year: "YYYY"
-  dateFormat: "DD/MM/YYYY"
 
 notifications:
   - type: telegram
