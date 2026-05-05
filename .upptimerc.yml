@@ -56,6 +56,8 @@ i18n:
   month: "Mon"
   year: "YYYY"
   dateFormat: "DD MMM YYYY"
- 
+
+notifications:
+  - type: telegram
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
