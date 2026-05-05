@@ -23,28 +23,39 @@ status-website:
       (function() {
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         function formatDates() {
-          // Target h3 specifically as seen in your inspect tool
           const headings = document.querySelectorAll('h3');
           headings.forEach(h => {
-            const text = h.innerText.trim();
-            // Match DD/MM/YYYY
+            const text = h.textContent.trim();
+            // This regex now looks for the "DD/MM/YYYY" pattern specifically
             const match = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
             if (match) {
-              const day = parseInt(match[1]);
+              const day = match[1];
               const monthIndex = parseInt(match[2]) - 1;
               const year = match[3];
               if (months[monthIndex]) {
-                h.innerText = day + " " + months[monthIndex] + " " + year;
+                const newDate = day + " " + months[monthIndex] + " " + year;
+                // Only update if it's different to prevent infinite loops with the observer
+                if (h.textContent !== newDate) {
+                  h.textContent = newDate;
+                }
               }
             }
           });
         }
-        formatDates();
-        setTimeout(formatDates, 1000);
-        setTimeout(formatDates, 3000);
 
+        // Run immediately
+        formatDates();
+
+        // High-frequency check for the first 5 seconds to catch slow loading components
+        let checks = 0;
+        const interval = setInterval(() => {
+          formatDates();
+          if (checks++ > 20) clearInterval(interval);
+        }, 250);
+
+        // Continuous observer for user navigation/scrolling
         const observer = new MutationObserver(() => formatDates());
-        observer.observe(document.body, { childList: true, subtree: true });
+        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
       })();
     </script>
 
